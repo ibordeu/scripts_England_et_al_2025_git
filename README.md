@@ -1,6 +1,8 @@
 # Dysregulated stem cell co-option of the lung regeneration program drives tumor initiation. 
 ## England et al. Cell Stem Cell (2025)
 
+[![DOI](https://zenodo.org/badge/914657790.svg)](https://doi.org/10.5281/zenodo.14625398)
+
 This repository contains:
 
 (1) **data** : Folder with the clonal data and corresponding postprocessed data to reproduce the main and supplementary figures in the paper.
