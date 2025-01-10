@@ -220,7 +220,7 @@ hold off
 % 
 fit_linear_growth(xvals(1:2),meanvals(1:2)); 
 fit_linear_growth(xvals(2:end),meanvals(2:end)); 
-xlabel('Week')
+xlabel('Week') 
 ylabel('Avg. Clone size (no. of cells)')
 legend off
 ylim([0,7])
@@ -303,7 +303,7 @@ for i = 1:length(cs_all)
     ylim([0,100])
 end
 
-%% FIGURE S2B, S2C, S2D
+%% FIGURE S2B, S2C, S2D and MENDELEY Data Figure 1C, 1D, 1E, 1F, 1G, 1H 
 % ratio of pro-Sftp^- cells / pro-Stfp^+ cells in RFP+ clones.
 
 rm_clones_of_size = 1;
@@ -1444,3 +1444,4 @@ switch dataset
 end
 
 end
+
