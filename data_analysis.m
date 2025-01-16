@@ -9,6 +9,8 @@ root_path = '';
 % The scrpt is meant to be run top to bottom, as some panels depend on some
 % preprocesing of the data that is not in the preceding section.
 %
+% add utils folder to path (contains plotting functions)
+addpath('utils')
 % provide data directory and RUN
 datadir = 'data';
 %
@@ -171,7 +173,7 @@ f = figure; f.Position = [000 100 250 250];
     dot_plot_samples(lobe_area_total(1:9),time_points(1:9),time_points_lbl_tmp(1:9),'Lobe area (\mum^2)',-1); 
     xlim([(time_points(1))-5,(time_points(9))+5]); xlabel('Week')
 
-%% % FIGURE S1M, S3P: Number of clones per lobe
+%% % FIGURE S1K, S3P: Number of clones per lobe
 time_points_lbl_tmp = time_points_lbl;
 time_points_lbl_tmp{2} = '';
 
@@ -187,7 +189,7 @@ dot_plot(clone_number_per_lobe(15:end),time_points_merge(15:end),time_points_mrg
 title('kras')
 xlim([(time_points_merge(15))-1,(time_points_merge(end))+1]); xlabel('Week'); yl = ylim(); ylim([0,yl(2)])
 
-%% FIGURE S1N: Clone density CONFETTI
+%% FIGURE S1L: Clone density CONFETTI
 time_points_lbl_tmp = time_points_lbl;
 time_points_lbl_tmp{2} = '';
 
@@ -330,7 +332,7 @@ for i = 1:length(cs_all)
     axis([0 maxl 0 maxl]);
 end
 
-%% FIGURE S1I
+%% FIGURE S1I (both panels)
 cols = {[0.9290, 0.6940, 0.1250],[0.8500, 0.3250, 0.0980]};
 mkrs = {'o','s'};
 
@@ -373,7 +375,7 @@ average_clone_sizes = {};
 average_clone_sizes_nosing = {};
 fit_model = 1;
 
-show_plots = 0; % change to 1 to show plots
+show_plots = 0; % change to 1 to show plots with fits
 counter = 0;
 size_thesholds = [];
 
@@ -477,6 +479,8 @@ for ndatas = 1:length(datasets) %
 end
 
 %% FIGURE 1G, 1H, 1I, 2F, 2G, S6D, S6E, S6F
+% Previous section must by executed before generating these plots
+
 figure;
 % CONFETTI
 subplot(3,3,3); 
@@ -570,9 +574,10 @@ set(gca,'yscale','log')
 set(gcf,'position',[10,10,700,800])
 legend({'data mean\pmSD','exp fit'},'Location','northwest'); legend boxoff;
 
-%% FIGURE 1F, 2E, 5D, 5E, S1K, S1L, S3I, S3J, S6C
+%% Related to FIGURE 1F, 2E, 5D, 5E, S1N, S1O, S3I, S3J, S6C
 % PLOT CCDFs OF CLONE SIZE (average +- SD)
-% Experimental curves only, for model see simulation script sim_two_pop_model script
+% This shows the experimental curves only, for plots with model run 
+% simulation script "sim_two_pop_model.m"
 
 for ndatas = 4:length(datasets) %
     for chan = 1:size(clone_sizes_combined{ndatas},2)
@@ -601,7 +606,7 @@ for ndatas = 4:length(datasets) %
     end
 end
 
-%% FIGURE 5F, 5G, 5H, 5I, 6E, 6F, S6G, S6H, S6I
+%% FIGURE 5G, 5H, 5I, 5J, 6E, 6F, S6G, S6H, S6I
 % Size-size correlation
 
 channels_to_analyse = {}; chcombo = {};
