@@ -2,6 +2,8 @@
 % This script runs stochastic simulations of the two population model.
 % This script produces plots comparing the empirical cumulative distribution
 % of clone sizes with the one obtained numerically.
+% For details on the model and numerical implementations please refer to
+% the METHODS S1 document.
 %%-----------------------------------------------------------------------%%
 close all;
 clear all; 
@@ -180,7 +182,7 @@ for sets = 1:2
 end
 %% Functions
 function clone_info = function_2_population_model(sigma_f,r,sigma_s,q,nclones,prop_s,t_max,N_max)
-% Simulations of the two population model, Supplemental Note Eq. (1)
+% Simulations of the two population model,  METHODS S1 Eq. (1)
 %
 % F : fast cycling cells
 % S : slow cycling cells
@@ -266,7 +268,7 @@ end % function_2_population_model
 
 %% Functions
 function clone_info = function_2_population_model_ageing(sigma_f,r,sigma_s,q,tau,tausigma_f,taur,tausigma_s,tauq,nclones,prop_f,t_max,N_max)
-% Simulations of the two population model, Supplemental Note Eq. (1), considering
+% Simulations of the two population model,  METHODS S1 Eq. (1), considering
 % a change in the proliferation dynamic after time tau.
 %
 % F : fast cycling cells

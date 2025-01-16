@@ -819,8 +819,7 @@ end
 function [gof,nbar,nbar_p,p0p,T1,bincents,zero_all,zero_long] = fit_biexponential(clone_sizes,size_threshold,ignore_clones_of_size,upper_cuttoff)
 % ---------------------------------------------------------------------
 % This function fits the bi-exponential CDF function to the empirical
-% data as described in the "Model fits" section of the supplementary
-% Note
+% data as described in the "Model fits" section of the METHODS S1 PDF file
 % ---------------------------------------------------------------------
 % construct empirical CDF
 [emp_cdf,bincents] = empirical_cdf(clone_sizes,0,1,ignore_clones_of_size);
